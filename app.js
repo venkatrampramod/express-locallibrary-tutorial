@@ -29,7 +29,13 @@ mongoose.set("strictQuery", false);
 //const dev_db_url =
 //  "mongodb+srv://cooluser:coolpassword@cluster0.lz91hw2.mongodb.net/local_library?retryWrites=true&w=majority";
 const dev_db_url = "mongodb://127.0.0.1:27017/local_library";
+/*
+  mongodb uri from within docker
+  "mongodb://host.docker.internal:27017/local_library"
+  */
+//const dev_db_url = "mongodb://host.docker.internal:27017/local_library";
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
+console.log(`mongoDB ${mongoDB}`);
 
 main().catch((err) => console.log(err));
 async function main() {
